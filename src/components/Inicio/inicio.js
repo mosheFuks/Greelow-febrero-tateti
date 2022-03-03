@@ -3,10 +3,18 @@ import { useContext, useState } from 'react'
 import { Context } from '../../store/appContext'
 
 const Inicio= () => {
-    const {setJugador1, setJugador2, setDatosIngresados} = useContext(Context)
+    const {setJugador1, setJugador2, setDatosIngresados, setFichaJug1, fichaJug1} = useContext(Context)
 
-    const comenzar = () => {
+    const comenzarConX = () => {
         setDatosIngresados(true)
+        setFichaJug1("X")
+        console.log(`J1: ${fichaJug1}`)
+    }
+
+    const comenzarConO = () => {
+        setDatosIngresados(true)
+        setFichaJug1("O")
+        console.log(`J1: ${fichaJug1}`)
     }
 
     return (
@@ -25,10 +33,10 @@ const Inicio= () => {
             <div>
             <div className='d-flex justify-content-beettwen' style={{marginTop: "5px"}}>
                 <div className='d-flex justify-content-center shadow tamanioFiguras'>
-                    <h1 className="figura" style={{color: "red"}} onClick={() => comenzar()}>X</h1>
+                    <h1 className="figura" style={{color: "red"}} onClick={() => comenzarConX()}>X</h1>
                 </div>
                 <div className='d-flex justify-content-center shadow tamanioFiguras'>
-                    <h1 className="figura" style={{color: "yellow"}} onClick={() => comenzar()}>O</h1>
+                    <h1 className="figura" style={{color: "yellow"}} onClick={() => comenzarConO()}>O</h1>
                 </div>
 
             </div>

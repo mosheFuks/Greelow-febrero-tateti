@@ -17,3 +17,8 @@
     width: 700px;
     border-right: 2px solid black;
 }
+
+.fichaEnJuego{
+    margin-left: 60px;
+    font-size: 100px;
+}
