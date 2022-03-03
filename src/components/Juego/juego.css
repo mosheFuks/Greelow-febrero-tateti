@@ -1,0 +1,19 @@
+.rows{
+    margin-left: 25px;
+    height: 150px;
+    width: 700px;
+    border-bottom: 2px solid black;
+}
+
+.lastRow{
+    margin-left: 25px;
+    height: 150px;
+    width: 700px;
+}
+
+.lastCols{
+    margin-left: 25px;
+    height: 150px;
+    width: 700px;
+    border-right: 2px solid black;
+}
