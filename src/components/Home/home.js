@@ -15,17 +15,12 @@ const Home= () => {
                 </div>
             </div>
             <div className='d-flex align-items-center'>
-
-            {!datosIngresados ?
-
-                    <Inicio />
+                {!datosIngresados ?
+                     <Inicio />
                 :
-
                     <Juego />
-
-
-            }
-        </div>
+                }
+            </div>
        </div>
     );
 }
