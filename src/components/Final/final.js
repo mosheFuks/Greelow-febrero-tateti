@@ -3,7 +3,7 @@ import {useState, useContext} from 'react'
 import { Context } from '../../store/appContext'
 
 const Final = () => {
-    const {letraGanadora, jugador1, jugador2, fichaJug1, setHayGanador, posiciones, setTurnoJug1, hayEmpate} = useContext(Context)
+    const {letraGanadora, jugador1, jugador2, fichaJug1, setHayGanador, posiciones, setTurnoJug1, hayEmpate, setCantPosMarcadas} = useContext(Context)
     let jugGanador;
 
     const restart = () => {
@@ -12,6 +12,7 @@ const Final = () => {
         }
         setTurnoJug1(true)
         setHayGanador(false)
+        setCantPosMarcadas(1)
     }
 
     const fijarGanador = () => {
@@ -34,13 +35,8 @@ const Final = () => {
         <>
         <div className='container-fluid primerDom' style={{width: "800px", height: "500px",  paddingTop: "10px"}}>
             {hayEmpate?
-                <div className='container-fluid primerDom' style={{width: "800px", height: "500px",  paddingTop: "10px"}}>
-                    <div className='text-center'>
-                        <p className="mensajeFinal">Hay Empate</p>
-                    </div>
-                    <div className='d-flex justify-content-center'>
-                        <button className="btn btn-success" onClick={() => restart()}>Play Again</button>
-                    </div>
+                <div className='text-center'>
+                    <p className="mensajeFinal">Hay Empate</p>
                 </div>
             :
                 <>
@@ -48,7 +44,8 @@ const Final = () => {
                     <p className="mensajeFinal">The winner is:</p>
                 </div><div className='text-center'>
                     <p className="jugGan">{jugGanador}</p>
-                </div></>
+                </div>
+                </>
 
             }
             <div className='d-flex justify-content-center'>

@@ -1,25 +1,23 @@
 import './juego.css'
-import {useContext} from 'react'
+import {useContext, useState} from 'react'
 import { Context } from '../../store/appContext'
 import Final from '../Final'
 
 
 
 const Juego = () => {
-    const { fichaJug1, posiciones, hayGanador, setHayGanador, setLetraGanadora, turnoJug1, setTurnoJug1, setHayEmpate  } = useContext(Context)
+    const { fichaJug1, posiciones, hayGanador, setHayGanador, setLetraGanadora, turnoJug1, setTurnoJug1, setHayEmpate, hayEmpate, cantPosMarcadas, setCantPosMarcadas  } = useContext(Context)
     let fichaJug2 = ''
-    let cantPosMarcadas = 0;
-
+    
     /*1) Toma la posicion segun el id que se pasa por parametro
       2) Si es el turno del Jug1 (turnoJug1 = true) cambia pos.simbolo a la ficha que haya elegido el jug1 y setea que el turno del jug1 es false, porq ya jugo.
       3) Si no es el turno del jug1 (turnoJug1 = false) se fija que ficha tiene el jug1, toma la contraria y se la pone a pos.simbol, luego setea turnoJug1 a true, porq ya tiene que volver a jugar el  */
     const marcarPosicion = (id) => { 
         let pos = posiciones.find(po => po.id == id)
-        cantPosMarcadas++;
+        setCantPosMarcadas(cantPosMarcadas + 1)
         if(turnoJug1){
             pos.simbolo = fichaJug1
             pos.marcada = true
-            console.log(pos.simbolo)
             setTurnoJug1(false)
             comprobarGanadorX()
             comprobarGanadorO()
@@ -39,7 +37,7 @@ const Juego = () => {
             comprobarGanadorO()
             comprobarEmpate()
         }
-        console.log(pos)
+        console.log(cantPosMarcadas)
     }
 
     const comprobarGanadorX = () => {
@@ -101,12 +99,10 @@ const Juego = () => {
     }
 
     const comprobarEmpate = () => {
-        if(cantPosMarcadas == 9 && !hayGanador){
-            for(let i = 0; i < posiciones.length;  i++){
-                posiciones[i].simbolo = ''
-            }
-            setTurnoJug1(true)
+        if(cantPosMarcadas == 8){
             setHayEmpate(true)
+            setCantPosMarcadas(0)
+            console.log(hayEmpate)
         }
     }
 
