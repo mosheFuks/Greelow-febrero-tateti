@@ -13,7 +13,7 @@ const Juego = () => {
       2) Si es el turno del Jug1 (turnoJug1 = true) cambia pos.simbolo a la ficha que haya elegido el jug1 y setea que el turno del jug1 es false, porq ya jugo.
       3) Si no es el turno del jug1 (turnoJug1 = false) se fija que ficha tiene el jug1, toma la contraria y se la pone a pos.simbol, luego setea turnoJug1 a true, porq ya tiene que volver a jugar el  */
     const marcarPosicion = (id) => { 
-        let pos = posiciones.find(po => po.id == id)
+        let pos = posiciones.find(po => po.id === id)
         setCantPosMarcadas(cantPosMarcadas + 1)
         if(turnoJug1){
             pos.simbolo = fichaJug1
@@ -23,7 +23,7 @@ const Juego = () => {
             comprobarGanadorO()
             comprobarEmpate()
         } else {
-            if(fichaJug1 == "X"){
+            if(fichaJug1 === "X"){
                 fichaJug2 = "O"
                 pos.simbolo = fichaJug2
                 pos.marcada = true
@@ -41,28 +41,28 @@ const Juego = () => {
     }
 
     const comprobarGanadorX = () => {
-        if (posiciones[0].simbolo == "X" && posiciones[1].simbolo == "X" && posiciones[2].simbolo == "X" ){
+        if (posiciones[0].simbolo === "X" && posiciones[1].simbolo === "X" && posiciones[2].simbolo === "X" ){
             setHayGanador(true)
             setLetraGanadora("X")
-        } if (posiciones[3].simbolo == "X" && posiciones[4].simbolo == "X" && posiciones[5].simbolo == "X" ){
+        } if (posiciones[3].simbolo === "X" && posiciones[4].simbolo === "X" && posiciones[5].simbolo === "X" ){
             setHayGanador(true)
             setLetraGanadora("X")
-        } if (posiciones[6].simbolo == "X" && posiciones[7].simbolo == "X" && posiciones[8].simbolo == "X" ){
+        } if (posiciones[6].simbolo === "X" && posiciones[7].simbolo === "X" && posiciones[8].simbolo === "X" ){
             setHayGanador(true)
             setLetraGanadora("X")
-        }if (posiciones[0].simbolo == "X" && posiciones[3].simbolo == "X" && posiciones[6].simbolo == "X" ){
+        }if (posiciones[0].simbolo === "X" && posiciones[3].simbolo === "X" && posiciones[6].simbolo === "X" ){
             setHayGanador(true)
             setLetraGanadora("X")
-        } if (posiciones[1].simbolo == "X" && posiciones[4].simbolo == "X" && posiciones[7].simbolo == "X" ){
+        } if (posiciones[1].simbolo === "X" && posiciones[4].simbolo === "X" && posiciones[7].simbolo === "X" ){
             setHayGanador(true)
             setLetraGanadora("X")
-        } if (posiciones[2].simbolo == "X" && posiciones[5].simbolo == "X" && posiciones[8].simbolo == "X" ){
+        } if (posiciones[2].simbolo === "X" && posiciones[5].simbolo === "X" && posiciones[8].simbolo === "X" ){
             setHayGanador(true)
             setLetraGanadora("X")
-        } if (posiciones[0].simbolo == "X" && posiciones[4].simbolo == "X" && posiciones[8].simbolo == "X" ){
+        } if (posiciones[0].simbolo === "X" && posiciones[4].simbolo === "X" && posiciones[8].simbolo === "X" ){
             setHayGanador(true)
             setLetraGanadora("X")
-        } if (posiciones[2].simbolo == "X" && posiciones[4].simbolo == "X" && posiciones[6].simbolo == "X" ){
+        } if (posiciones[2].simbolo === "X" && posiciones[4].simbolo === "X" && posiciones[6].simbolo === "X" ){
             setHayGanador(true)
             setLetraGanadora("X")
         }
@@ -70,28 +70,28 @@ const Juego = () => {
     }
 
     const comprobarGanadorO = () => {
-        if (posiciones[0].simbolo == "O" && posiciones[1].simbolo == "O" && posiciones[2].simbolo == "O" ){
+        if (posiciones[0].simbolo === "O" && posiciones[1].simbolo === "O" && posiciones[2].simbolo === "O" ){
             setHayGanador(true)
             setLetraGanadora("O")
-        } if (posiciones[3].simbolo == "O" && posiciones[4].simbolo == "O" && posiciones[5].simbolo == "O" ){
+        } if (posiciones[3].simbolo === "O" && posiciones[4].simbolo === "O" && posiciones[5].simbolo === "O" ){
             setHayGanador(true)
             setLetraGanadora("O")
-        } if (posiciones[6].simbolo == "O" && posiciones[7].simbolo == "O" && posiciones[8].simbolo == "O" ){
+        } if (posiciones[6].simbolo === "O" && posiciones[7].simbolo === "O" && posiciones[8].simbolo === "O" ){
             setHayGanador(true)
             setLetraGanadora("O")
-        }if (posiciones[0].simbolo == "O" && posiciones[3].simbolo == "O" && posiciones[6].simbolo == "O" ){
+        }if (posiciones[0].simbolo === "O" && posiciones[3].simbolo === "O" && posiciones[6].simbolo === "O" ){
             setHayGanador(true)
             setLetraGanadora("O")
-        } if (posiciones[1].simbolo == "O" && posiciones[4].simbolo == "O" && posiciones[7].simbolo == "O" ){
+        } if (posiciones[1].simbolo === "O" && posiciones[4].simbolo === "O" && posiciones[7].simbolo === "O" ){
             setHayGanador(true)
             setLetraGanadora("O")
-        } if (posiciones[2].simbolo == "O" && posiciones[5].simbolo == "O" && posiciones[8].simbolo == "O" ){
+        } if (posiciones[2].simbolo === "O" && posiciones[5].simbolo === "O" && posiciones[8].simbolo === "O" ){
             setHayGanador(true)
             setLetraGanadora("O")
-        } if (posiciones[0].simbolo == "O" && posiciones[4].simbolo == "O" && posiciones[8].simbolo == "O" ){
+        } if (posiciones[0].simbolo === "O" && posiciones[4].simbolo === "O" && posiciones[8].simbolo === "O" ){
             setHayGanador(true)
             setLetraGanadora("O")
-        } if (posiciones[2].simbolo == "O" && posiciones[4].simbolo == "O" && posiciones[6].simbolo == "O" ){
+        } if (posiciones[2].simbolo === "O" && posiciones[4].simbolo === "O" && posiciones[6].simbolo === "O" ){
             setHayGanador(true)
             setLetraGanadora("O")
         }
@@ -99,7 +99,7 @@ const Juego = () => {
     }
 
     const comprobarEmpate = () => {
-        if(cantPosMarcadas == 8){
+        if(cantPosMarcadas === 8){
             setHayEmpate(true)
             setCantPosMarcadas(0)
             console.log(hayEmpate)

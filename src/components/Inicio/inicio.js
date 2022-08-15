@@ -20,7 +20,7 @@ const Inicio= () => {
     return (
         <div className='container-fluid primerDom' style={{width: "800px", height: "500px",  paddingTop: "10px"}}>
             <div className='d-flex justify-content-center' style={{paddingBottom: "50px"}}>
-               <h1>PICK YOUR WEAPON</h1> 
+               <h1>PICK YOUR WEAPON!</h1> 
             </div>
             <div className='d-flex justify-content-beettwen justify-content-center'>
                 <div className='ingresos'>

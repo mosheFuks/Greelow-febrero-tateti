@@ -16,13 +16,13 @@ const Final = () => {
     }
 
     const fijarGanador = () => {
-        if(letraGanadora == "X" && fichaJug1 == "X") {
+        if(letraGanadora === "X" && fichaJug1 === "X") {
             jugGanador = jugador1
-        } if (letraGanadora == "O" && fichaJug1 == "O") {
+        } if (letraGanadora === "O" && fichaJug1 === "O") {
             jugGanador = jugador1
-        } if (letraGanadora == "X" && fichaJug1 == "O") {
+        } if (letraGanadora === "X" && fichaJug1 === "O") {
             jugGanador = jugador2
-        } if (letraGanadora == "O" && fichaJug1 == "X") {
+        } if (letraGanadora === "O" && fichaJug1 === "X") {
             jugGanador = jugador2
 
         } 
